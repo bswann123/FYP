@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Used for making the website responsive-->
+        <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+        <!-- Import css stylesheet-->
+        <link rel="stylesheet" href="style.css">
+        <!-- Used for hamburger menu icon-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+        <title>
+            Academic Curriculum
+        </title>
+    </head>
+    <body>
+    <section class="header">
+        <nav class = "navbar">
+            <!--Logo and navigation bar links-->
+            <a href="index.html"><img src="logo-Reading.png"></a>
+                <ul class="nav-menu">
+                    <li class = "items"><a href="index.html">Home</a></li>
+                    <li class = "items">
+                        <a href="curriculum.php">Academic Curriculum</a>
+                            <ul class = "subnav">
+                                <li class = "subitems"><a href="create.php">Create Module</a></li>
+                                <li class = "subitems"><a href="curriculum.php">View Modules</a></li>
+                                <li class = "subitems"><a href="edit.php">Edit Module</a></li>
+                             </ul>
+                    </li>
+                </ul>
+                <!-- Hamburger Menu for smaller screen sizes-->
+                <div class = "hamburger" onclick = "showMenu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+        </nav>
+    <div class="intro">
+        <h1>Reading University Computer Science Curriculum</h1>
+        <a href="curriculum.php" class = "homeBtn">Visit the Academic Curriculum</a> 
+    </div>
+    </section>
+
+    <section class = "info">
+        <!-- Short informative section on what the website provides-->
+        <h1>What we provide</h1>
+        <p>This website has been created to provide the user with the necessary tools for managing the curriculum for Reading University, more specifically the Computer Science department. </p>
+
+
+        
+        <div class="rows">
+            <div onclick="location.href='create.php';" style="cursor: pointer;" class="columns">
+                <!-- Section in a box which provides information on the module creation function -->
+                <h3>Create a Module</h3>
+                <p>This tool within the Computer Science Curriculum Management System allows for users to create new modules in the curriculum through the use of an easy-to-use form. Users must be logged in to access this webpage.</p>
+            </div>
+
+            <div onclick="location.href='curriculum.php';" style="cursor: pointer;" class="columns">
+                <!-- Section in a box which provides information on the module portfolio -->
+                <h3>Module Portfolio</h3>
+                <p>This webpage will allow you to view all the modules, or filter by year, category and topic which will allow for comparison of modules, or to see which modules teach your favourite topic.</p>
+            </div>
+
+            <div onclick="location.href='edit.php';" style="cursor: pointer;" class="columns">
+                <h3>Edit Modules</h3>
+                <!-- Section in a box which provides information on the module editor feature -->
+                <p>This system also provides a tool for edit modules, for instance, the module code or module title. Users must be logged in to access this webpage. </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for hamburger menu open and close toggle events-->
+    <script src="hamburgerMenu.js">
+    </script>
+    </body>
+</html>

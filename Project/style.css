@@ -1,0 +1,411 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: Arial;
+}
+
+/*---------------navbar, image and header------------------*/
+
+/* header used for setting background */
+.header {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(77, 76, 76, 0.7),rgba(147, 149, 153, 0.7)),url(readingcampus1.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  font-weight: bold;
+}
+
+
+/* navbar formatting*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 2%;
+  background-color: white;
+}
+
+/* Sets padding for logo */
+.navbar img {
+  padding: 20px 5px 5px 10px;
+}
+
+
+/* Format links and remove the list style */
+.navbar ul li {
+  display: inline;
+  padding: 3px 10px;
+  position: relative;
+  font-size: 18px;
+}
+
+/* Set color of navbar items and remove any text decoration */
+.navbar ul li a {
+  color: rgb(3, 3, 3);
+  text-decoration: none; 
+
+}
+
+/* Change navbar text color on mouse-over with a transition time*/
+.navbar a:hover {
+  color: #e32118;
+  transition: 1.5s;
+}
+
+.nav-menu {
+  flex: 1;
+  text-align: right;
+}
+
+/* Dropdown menu properties for curicculum */
+.nav-menu li .subnav {
+  min-width: 100%; /* Set width of the dropdown */
+  background-color: lightgrey;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 0; 
+  text-align: center;
+}
+
+/* Displays dropdown menu on hover */
+.nav-menu li:hover .subnav {
+  display: block; 
+}
+
+/* Displays dropdown menu items */
+.nav-menu li .subnav li {
+  display: block;
+}
+
+
+/*---------------intro and button------------------*/
+
+/* Add intro text in center of the page */
+.intro {
+  width: 100%;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  text-align: center;
+
+}
+
+/* Set size and padding of text */
+.intro h1 {
+  font-size: 40px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Sets the color, position, font size, border and more of button */
+.homeBtn {
+  text-transform: uppercase;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  font-size: 18px;
+  background-color: #e32118;
+}
+
+/* Set background color and transition time on hover for button */
+.homeBtn:hover {
+  background-color: lightgrey;
+  transition: 1.5s;
+}
+
+/* Set to not display when the screen size width is bigger than 768px */
+.hamburger {
+  display: none;
+}
+/* Set properties for the hamburger menu */
+.bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 8px auto;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-color: black;
+}
+
+/* Media queries for adjusting text for smaller screen sizes with a max width of 768px */
+@media only screen and (max-width: 768px){
+  .Login *{
+    width:100%;
+    margin-top: 10%;
+  }
+  input{
+    width:100%;
+    margin-top:5%;
+  }
+  #modCategory{
+    width:100%;
+    margin-top:5%;
+  }
+  .intro h1 {
+    font-size: 25px;
+  }
+  /* Sets properties for nav-menu while ensuring the menu is hidden */
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: rgb(253, 252, 252);
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+}
+
+.nav-menu.active {
+    left: 0;
+}
+
+.nav-item {
+    margin: 2rem 0;
+}
+
+/* Sets display of the hamburger menu and assigns a cursor pointer to change the cursor when the menu is hovered over*/
+.hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* First and last childs to set the transform of the hamburger menu to make it slide onto the screen  */
+.hamburger.active .bar:first-child {
+    transform: translateY(8px) rotate (45deg);
+  }
+.hamburger.active .bar:last-child {
+  transform: translateY(8px) rotate (-45deg);
+  }
+
+.rows {
+  flex-direction: column;
+  }
+ .Login{
+    height: 100%;
+    width: 100%;
+ }
+
+}
+
+/*------------- Information section ------------- */
+
+/* Set padding and other properties for the info section */
+.info {
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+}
+/* Sets font, weight and alignment of the header text */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 30px; /* Creates padding between the header background image and information text  */
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 18px;
+  text-align: center;
+  line-height: 30px; /* Creates a space between the header text and paragraph*/
+  padding: 10px;
+}
+
+.rows {
+
+  margin-top: 5%; /* Creates a margin between the info header and what the website provides */
+  display: flex; /* Allows for the position of the info to be split into columns*/
+  justify-content: space-between; /* Creates a space between each row */
+}
+
+.columns {
+  flex-basis: 20%; /* Sets size of the columns to 30% */
+  background-color: lightgrey; /* Sets background colour for each column */
+  border: 5px; 
+  border-radius: 10px; /* Creates rounded edges for the border*/
+  box-sizing: border-box;
+  margin-bottom: 5%;
+  padding-bottom: 2%;
+  transition: 1s;
+}
+
+/* Sets column on hover effect and shadow color while setting an opcaity of 0.5 */
+.columns:hover {
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+  transition: 0.1s;
+}
+
+h3 {
+  text-align: center;
+  margin: 5px;
+}
+
+/*------------- Table style properties ------------- */
+
+.modules {
+  border-collapse: collapse;
+  width: 50%;
+  color: black;
+  text-align: left;
+  border: 1.5px solid black;
+  padding: 50px 50px 50px 50px;
+}
+
+#th {
+
+  background-color: black;
+  color: white;
+  padding: 50px 50px 50px 50px;
+}
+
+td{
+  border: 1.5px solid black;
+}
+
+.modules th{
+  text-align: center;
+  font-size: 15px;
+}
+
+/* Primary text properties*/
+.primary-text {
+  font-weight: bold; /* set font to bold */
+  font-size: 20px; /* font text size */
+  padding-top: 1.5%; 
+  padding-bottom: 1%;
+}
+
+/* container properties */
+.container {  
+  max-width: 1350px;  /* sets max width of container to 1350px */
+  width: 100%; 
+  margin: 50px;  
+  height: auto;  /* height set to auto to allow it to adjust */
+  display: block;  
+}  
+
+.mod-group{
+  padding: 10px;
+}
+
+label {  
+  float: left;  
+  padding-right: 50px;  
+  line-height: 10%;  
+  display: block;  
+  width: 208px;  
+}   
+
+/*------------- Form style properties ------------- */
+
+
+fieldset{
+  margin: 2em 0; 
+  padding: 1em 2em;
+  border: solid 1.5px black;
+  border-radius: 6px;
+  min-width: 200px;
+  max-width: 500px;
+}
+
+legend{
+  font-size: 24px;
+  color: black;
+  padding: 5px; /* sets padding 5px all around the legend*/
+}
+
+.box {
+  border:#666666 solid 1px; 
+}
+
+
+/*------------- Login form ------------- */
+.Login{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(8,7,16,0.6);
+    padding: 50px 30px;
+    box-sizing: border-box;
+}
+
+/* sets properties for everything in the login form, including text. */
+.Login *{
+    color: #0e0e0e;
+    outline: none;
+    letter-spacing: 0.5px;
+}
+
+/* properties for the heading */
+.Login h3{
+    font-size: 28px;
+    font-weight: 600; /* makes the font thicker*/
+    line-height: 42px;
+    text-align: center; 
+}
+
+/* login label properties*/
+.loginCred{
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 40px;
+    width: 5%;
+}
+
+/* Login input field properties */
+#loginForm input { 
+  display: block;
+  height: 45px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 0 5px;
+  font-size: 16px;
+  border: 1px solid black;
+}
+
+/* sets color of placeholder text */
+::placeholder{
+    color: grey;
+}
+
+/* sets properties for login button */
+.submitLogin{
+    margin-top: 15px;
+    width: 100%;
+    background-color: rgb(189, 189, 189);
+    color: black;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
